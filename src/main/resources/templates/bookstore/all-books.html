@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All books</title>
+</head>
+<body>
+<h1>All books</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author Name</th>
+        <th>Author Surname</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book: ${allBooks}">
+        <td>
+            <span th:text="${book.id}">
+            0
+            </span>
+        </td>
+        <td>
+            <span th:text="${book.title}">
+                Game of Thrones
+            </span>
+        </td>
+        <td>
+            <span th:text="${book.author.name}">
+                George
+            </span>
+        </td>
+        <td>
+            <span th:text="${book.author.lastName}">
+                Martin
+            </span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
