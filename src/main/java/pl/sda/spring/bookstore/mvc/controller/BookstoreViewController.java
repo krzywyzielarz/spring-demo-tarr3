@@ -3,6 +3,8 @@ package pl.sda.spring.bookstore.mvc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import pl.sda.spring.bookstore.common.dto.AddBookDto;
 import pl.sda.spring.bookstore.common.dto.BookDto;
 import pl.sda.spring.bookstore.common.dto.BookMapper;
 import pl.sda.spring.bookstore.common.service.BookstoreService;
@@ -24,4 +26,12 @@ public class BookstoreViewController {
       model.addAttribute("allBooks", allBooks);
       return "bookstore/all-books";
    }
+
+   @PostMapping("/mvc/bookstore/add")
+   public String addBook(AddBookDto addBookDto) {
+      bookstoreService.add(bookMapper.mapToEntity(addBookDto));
+      return "redirect:/mvc/bookstore/all";
+      // return "bookstore/all-books";
+   }
+
 }
