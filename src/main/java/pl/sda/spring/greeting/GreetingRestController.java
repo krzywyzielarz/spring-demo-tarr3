@@ -2,6 +2,9 @@ package pl.sda.spring.greeting;
 
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.Arrays;
 import java.util.Optional;
 

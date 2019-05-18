@@ -1,7 +1,9 @@
 package pl.sda.spring.bookstore;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface Bookstore extends CrudRepository<Book, Long> {
-   Iterable<Book> findByTitle(String title);
+import java.util.Collection;
+
+public interface Bookstore extends JpaRepository<Book, Long> {
+   Collection<Book> findByTitle(String title);
 }
