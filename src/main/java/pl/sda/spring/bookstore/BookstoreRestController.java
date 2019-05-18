@@ -6,29 +6,28 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/books")
 public class BookstoreRestController {
 
-   private Bookstore bookstore;
    private BookMapper bookMapper;
+   private BookstoreService bookstoreService;
 
-   public BookstoreRestController(Bookstore bookstore, BookMapper bookMapper) {
-      this.bookstore = bookstore;
+   public BookstoreRestController(BookMapper bookMapper, BookstoreService bookstoreService) {
       this.bookMapper = bookMapper;
+      this.bookstoreService = bookstoreService;
    }
 
    @GetMapping
    public Iterable<BookDto> getAllBooks(@RequestParam(required = false) String title) {
       if (title != null)
-         return bookMapper.mapToDto(bookstore.findByTitle(title));
-      return bookMapper.mapToDto(bookstore.findAll());
+         return bookMapper.mapToDto(bookstoreService.findByTitle(title));
+      return bookMapper.mapToDto(bookstoreService.findAll());
    }
 
    @PostMapping
    public long addBook(@RequestBody AddBookDto addBookDto) {
-      return bookstore.save(bookMapper.mapToEntity(addBookDto)).getId();
+      return bookstoreService.add(bookMapper.mapToEntity(addBookDto));
    }
 
    @DeleteMapping("/{bookId}")
    public void deleteBook(@PathVariable(name = "bookId") long id) {
-      bookstore.deleteById(id);
+      bookstoreService.delete(id);
    }
-
 }
