@@ -2,36 +2,26 @@ package pl.sda.spring.bookstore;
 
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
-import java.util.Collection;
-
 @RestController
 public class AuthorRestController {
 
-   private AuthorRepository authorRepository;
    private AuthorMapper authorMapper;
+   private AuthorService authorService;
 
-   public AuthorRestController(AuthorRepository authorRepository, AuthorMapper authorMapper) {
-      this.authorRepository = authorRepository;
+   public AuthorRestController(AuthorMapper authorMapper, AuthorService authorService) {
       this.authorMapper = authorMapper;
+      this.authorService = authorService;
    }
 
    @PostMapping("/api/authors")
    public long addAuthor(@RequestBody AddAuthorDto author) {
-      Author savedAuthor = authorRepository.save(authorMapper.mapToEntity(author));
+      Author savedAuthor = authorService.add(authorMapper.mapToEntity(author));
       return savedAuthor.getId();
    }
 
    @DeleteMapping("/api/authors/{id}")
-   @Transactional
    public void deleteAuthor(@PathVariable long id) {
-      authorRepository.findById(id).ifPresent(author -> {
-         Collection<Book> books = author.getBooks();
-         books.forEach(book -> book.setAuthor(null));
-         books.clear();
-         authorRepository.delete(author);
-      });
-      // authorRepository.deleteById(id);
+      authorService.delete(id);
    }
 
 }
