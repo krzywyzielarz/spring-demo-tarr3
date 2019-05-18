@@ -1,10 +1,10 @@
-package pl.sda.spring.bookstore.controller;
+package pl.sda.spring.bookstore.api.controller;
 
 import org.springframework.web.bind.annotation.*;
-import pl.sda.spring.bookstore.service.BookstoreService;
-import pl.sda.spring.bookstore.dto.AddBookDto;
-import pl.sda.spring.bookstore.dto.BookDto;
-import pl.sda.spring.bookstore.dto.BookMapper;
+import pl.sda.spring.bookstore.common.service.BookstoreService;
+import pl.sda.spring.bookstore.common.dto.AddBookDto;
+import pl.sda.spring.bookstore.common.dto.BookDto;
+import pl.sda.spring.bookstore.common.dto.BookMapper;
 
 @RestController
 @RequestMapping("/api/books")

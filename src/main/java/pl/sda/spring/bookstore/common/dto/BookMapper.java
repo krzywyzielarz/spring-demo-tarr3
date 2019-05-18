@@ -1,9 +1,9 @@
-package pl.sda.spring.bookstore.dto;
+package pl.sda.spring.bookstore.common.dto;
 
 import org.springframework.stereotype.Component;
-import pl.sda.spring.bookstore.repository.AuthorRepository;
-import pl.sda.spring.bookstore.model.Author;
-import pl.sda.spring.bookstore.model.Book;
+import pl.sda.spring.bookstore.common.repository.AuthorRepository;
+import pl.sda.spring.bookstore.common.model.Author;
+import pl.sda.spring.bookstore.common.model.Book;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

@@ -1,8 +1,7 @@
-package pl.sda.spring.bookstore.dto;
+package pl.sda.spring.bookstore.common.dto;
 
 import org.springframework.stereotype.Component;
-import pl.sda.spring.bookstore.dto.AddAuthorDto;
-import pl.sda.spring.bookstore.model.Author;
+import pl.sda.spring.bookstore.common.model.Author;
 
 @Component
 public class AuthorMapper {
