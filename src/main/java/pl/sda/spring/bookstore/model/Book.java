@@ -1,4 +1,4 @@
-package pl.sda.spring.bookstore;
+package pl.sda.spring.bookstore.model;
 
 import lombok.Data;
 

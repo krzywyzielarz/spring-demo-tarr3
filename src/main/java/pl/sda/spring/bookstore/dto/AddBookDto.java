@@ -1,4 +1,4 @@
-package pl.sda.spring.bookstore;
+package pl.sda.spring.bookstore.dto;
 
 import lombok.Data;
 

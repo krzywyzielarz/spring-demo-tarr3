@@ -1,6 +1,9 @@
-package pl.sda.spring.bookstore;
+package pl.sda.spring.bookstore.service;
 
 import org.springframework.stereotype.Service;
+import pl.sda.spring.bookstore.model.Author;
+import pl.sda.spring.bookstore.model.Book;
+import pl.sda.spring.bookstore.repository.AuthorRepository;
 
 import javax.transaction.Transactional;
 import java.util.Collection;

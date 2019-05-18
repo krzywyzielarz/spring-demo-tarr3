@@ -1,6 +1,10 @@
-package pl.sda.spring.bookstore;
+package pl.sda.spring.bookstore.controller;
 
 import org.springframework.web.bind.annotation.*;
+import pl.sda.spring.bookstore.service.AuthorService;
+import pl.sda.spring.bookstore.dto.AddAuthorDto;
+import pl.sda.spring.bookstore.dto.AuthorMapper;
+import pl.sda.spring.bookstore.model.Author;
 
 @RestController
 public class AuthorRestController {

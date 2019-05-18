@@ -1,6 +1,7 @@
-package pl.sda.spring.bookstore;
+package pl.sda.spring.bookstore.model;
 
 import lombok.Data;
+import pl.sda.spring.bookstore.model.Book;
 
 import javax.persistence.*;
 import java.util.Collection;

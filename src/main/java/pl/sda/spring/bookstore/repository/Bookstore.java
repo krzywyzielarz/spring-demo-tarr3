@@ -1,6 +1,7 @@
-package pl.sda.spring.bookstore;
+package pl.sda.spring.bookstore.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import pl.sda.spring.bookstore.model.Book;
 
 import java.util.Collection;
 

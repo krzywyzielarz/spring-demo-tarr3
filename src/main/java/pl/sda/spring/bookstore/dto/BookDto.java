@@ -1,6 +1,8 @@
-package pl.sda.spring.bookstore;
+package pl.sda.spring.bookstore.dto;
 
 import lombok.Data;
+import pl.sda.spring.bookstore.model.Author;
+import pl.sda.spring.bookstore.model.Book;
 
 @Data
 public class BookDto {
