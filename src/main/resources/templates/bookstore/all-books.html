@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<h2>
+    <form th:action="@{/mvc/logout}" method="post">
+        <input type="submit" value="Logout">
+    </form>
+</h2>
+
+<h2 th:text="${loginUser}">
+    User
+</h2>
+
 <h1>Form</h1>
 <form action="/mvc/bookstore/add" method="post">
     <p>

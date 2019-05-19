@@ -35,12 +35,14 @@ public class SecurityConfig {
             http
                     .antMatcher("/mvc/**")
                     .authorizeRequests()
-                    .antMatchers("/mvc/login").permitAll()
+                    .antMatchers("/mvc/login", "/mvc/register").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     .formLogin()
                     .loginPage("/mvc/login")
-                    .loginProcessingUrl("/mvc/login");
+                    .loginProcessingUrl("/mvc/login")
+                    .and()
+                    .logout().logoutUrl("/mvc/logout").logoutSuccessUrl("/mvc/bookstore/all");
         }
     }
 
